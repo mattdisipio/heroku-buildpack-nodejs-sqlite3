@@ -61,7 +61,7 @@ install_sqlite3() {
   echo "Downloading and installing sqlite3"
   local download_url="https://raw.githubusercontent.com/EtudieCA/heroku-sqlite3/master/sqlite3"
   wget "$download_url" -O /tmp/sqlite3
-  cat /tmp/sqlite3
+  echo "$dir"
   mv /tmp/sqlite3 $dir
   chmod +x $dir/bin/sqlite3
 }
