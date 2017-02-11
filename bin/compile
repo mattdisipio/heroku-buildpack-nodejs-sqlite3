@@ -99,7 +99,8 @@ install_bins() {
   if $YARN; then
     install_yarn "$BUILD_DIR/.heroku/yarn" "$yarn_engine"
   fi
-
+  
+  install_sqlite3 "$BUILD_DIR/.heroku/node"
   warn_old_npm
 }
 
