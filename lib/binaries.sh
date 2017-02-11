@@ -56,7 +56,7 @@ install_nodejs() {
 }
 
 install_sqlite3() {
-  local dir="$2"
+  local dir="$1"
   
   echo "Downloading and installing sqlite3"
   local download_url="https://github.com/EtudieCA/heroku-sqlite3/blob/master/sqlite3?raw=true"
