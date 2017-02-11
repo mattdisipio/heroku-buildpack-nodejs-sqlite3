@@ -60,11 +60,8 @@ install_sqlite3() {
   
   echo "Downloading and installing sqlite3"
   local download_url="https://raw.githubusercontent.com/EtudieCA/heroku-sqlite3/master/sqlite3"
-  local code=$(curl "$download_url" --fail --retry 5 --retry-max-time 15 -o /tmp/sqlite3 --write-out "%{http_code}")
-  if [ "$code" != "200" ]; then
-    echo "Unable to download sqlite3 pre-compiled binary" && false
-  fi
-  tar xzf /tmp/node.tar.gz -C /tmp
+  wget "$download_url" -O /tmp/sqlite3
+  cat /tmp/sqlite3
   mv /tmp/sqlite3 $dir
   chmod +x $dir/bin/sqlite3
 }
